@@ -1,435 +1,185 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <title>Documentation for Workers (Minetest mod)</title>
-  </head>
-  <body style=" font-family:calibri,sans">
+</head>
+
+<body style=" font-family:calibri,sans">
     <p> </p>
-    <div class="WordSection1">
-      <p class="MsoNormal" style="text-align:center;line-height:normal" align="center"><b><span
-            style="font-size:36.0pt">Workers Ver. 2.0<o:p></o:p></span></b></p>
-      <p class="MsoNormal" style="line-height:normal"><br>
-      </p>
-      <p class="MsoNormal" style="line-height:normal">Workers Mod</p>
-      <p class="MsoNormal" style="line-height:normal">By <span class="SpellE">LocaL_ALchemisT</span>
-        (prof_awang@yahoo.com)</p>
-      <p class="MsoNormal" style="line-height:normal">License: WTFPL</p>
-      <p class="MsoNormal" style="line-height:normal">Version: 2.0</p>
-      <p class="MsoNormal" style="line-height:normal">Dependencies: Default,
-        Bucket (highly recommended)</p>
-      <p class="MsoNormal" style="line-height:normal"><br>
-      </p>
-      <p class="MsoNormal" style="line-height:normal"><b><span style="font-size:14.0pt">CONTENTS<o:p></o:p></span></b></p>
-      <p class="MsoListParagraphCxSpFirst" style="text-indent:-18.0pt;line-height:normal;
-mso-list:l3 level1 lfo2"><span style="mso-fareast-font-family:
-Calibri;mso-fareast-theme-font:minor-latin;mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin"><span
-            style="mso-list:Ignore">1.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              </span></span></span><span dir="LTR"></span>Introduction</p>
-      <p class="MsoListParagraphCxSpMiddle" style="text-indent:-18.0pt;line-height:
-normal;mso-list:l3 level1 lfo2"><span style="mso-fareast-font-family:
-Calibri;mso-fareast-theme-font:minor-latin;mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin"><span
-            style="mso-list:Ignore">2.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              </span></span></span><span dir="LTR"></span>Crafting Recipe</p>
-      <p class="MsoListParagraphCxSpLast" style="text-indent:-18.0pt;line-height:normal;
-mso-list:l3 level1 lfo2"><span style="mso-fareast-font-family:
-Calibri;mso-fareast-theme-font:minor-latin;mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin"><span
-            style="mso-list:Ignore">3.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              </span></span></span><span dir="LTR"></span>Guide on Workers</p>
-      <p class="MsoNormal" style="line-height:normal"><o:p>&nbsp;</o:p></p>
-      <p class="MsoNormal" style="line-height:normal"><b><span style="font-size:14.0pt">INTRODUCTION<o:p></o:p></span></b></p>
-      <p class="MsoNormal" style="line-height:normal">Before we go further, I
-        apologize for bad English.</p>
-      <p class="MsoNormal" style="line-height:normal">This mod adds a set of
-        nodes that can move and can be interact to do specified work.</p>
-      <p class="MsoNormal" style="line-height:normal">The nodes, or workers, are
-        created for the <span class="SpellE">lulz</span> and used for fun only.
-        If you are a serious builder, then this mod <u>might</u> not be useful
-        to you.</p>
-      <p class="MsoNormal" style="line-height:normal">A brief history about this
-        mod:</p>
-      <p class="MsoNormal" style="line-height:normal"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          </span>Ver. 0.0: Harvester was the first (and only) worker available</p>
-      <p class="MsoNormal" style="line-height:normal"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          </span>Ver. 1.0: Added Miner &amp; Gardener</p>
-      <p class="MsoNormal" style="line-height:normal"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          </span>Ver. 1.1: Revised &amp; improved Miner inventory management</p>
-      <p class="MsoNormal" style="line-height:normal"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          </span>Ver. 2.0 (Current): Added 5 more workers</p>
-      <p class="MsoNormal" style="line-height:normal"><o:p>&nbsp;</o:p></p>
-      <p class="MsoNormal" style="line-height:normal">Sometimes the workers
-        would be addressed either as ‘him’ or ‘it’. It does not really matter to
-        me.</p>
-      <p class="MsoNormal" style="line-height:normal">Known bugs and problems:</p>
-      <p class="MsoListParagraphCxSpFirst" style="text-indent:-18.0pt;line-height:normal;
-mso-list:l1 level1 lfo4"><span style="mso-fareast-font-family:
-Calibri;mso-fareast-theme-font:minor-latin;mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin"><span
-            style="mso-list:Ignore">1.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              </span></span></span><span dir="LTR"></span>Workers move too fast
-        when they face north or east.</p>
-      <p class="MsoListParagraphCxSpLast" style="text-indent:-18.0pt;line-height:normal;
-mso-list:l1 level1 lfo4"><span style="mso-fareast-font-family:
-Calibri;mso-fareast-theme-font:minor-latin;mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin"><span
-            style="mso-list:Ignore">2.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              </span></span></span><span dir="LTR"></span>Lag or crash occurs at
-        some point (happens rarely, depend on how many workers are working in
-        one place).</p>
-      <p class="MsoNormal" style="line-height:normal">This mod has been tested
-        using <span class="SpellE">Minetest</span> 0.4dev.</p>
-      <p class="MsoNormal" style="line-height:normal">If there are any problems,
-        raise it up in the official <span class="SpellE">Minetest</span> forum
-        (in this mod’s topic, maybe?).</p>
-      <p class="MsoNormal" style="line-height:normal">Have fun.</p>
-      <p class="MsoNormal" style="line-height:normal"><o:p>&nbsp;</o:p></p>
-      <p class="MsoNormal" style="line-height:normal"><b><span style="font-size:14.0pt">CRAFTING
-            RECIPE<o:p></o:p></span></b></p>
-      <p class="MsoNormal" style="line-height:normal"><span style="mso-no-proof:yes"><img
-            src="images/image002.jpg" alt="Description: Description: Description: Description: C:\Users\Acer\Pictures\workers 2.0\recipe_all.bmp"
-            v:shapes="Picture_x0020_1" width="601" height="739"></span></p>
-      <p class="MsoNormal" style="line-height:normal">Some building plans for
-        builder (will be explained further below):</p>
-      <p class="MsoNormal" style="line-height:normal"><span style="mso-no-proof:yes"><img
-            src="images/image004.jpg" alt="Description: Description: Description: Description: C:\Users\Acer\Pictures\workers 2.0\plan_recipe_almost_all.bmp"
-            v:shapes="Picture_x0020_10" width="601" height="739"></span></p>
-      <p class="MsoNormal" style="line-height:normal"><o:p>&nbsp;</o:p></p>
-      <p class="MsoNormal" style="line-height:normal"><b><span style="font-size:14.0pt">GUIDE
-ON
-            WORKERS<o:p></o:p></span></b></p>
-      <p class="MsoListParagraph" style="text-indent:-18.0pt;line-height:normal;
-mso-list:l2 level1 lfo6"><b><span style="mso-fareast-font-family:
-Calibri;mso-fareast-theme-font:minor-latin;mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin"><span
-              style="mso-list:Ignore">A.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                </span></span></span></b><span dir="LTR"></span><b>Harvey The
-          Harvester<o:p></o:p></b></p>
-      <p class="MsoNormal" style="text-indent:18.0pt;line-height:normal"><span style="mso-no-proof:yes"><img
-            src="images/image005.png" alt="Description: Description: Description: Description: C:\Users\Acer\Pictures\workers 2.0\face_harvey.png"
-            v:shapes="Picture_x0020_7" width="160" height="160"></span></p>
-      <p class="MsoNormal" style="text-indent:18.0pt;line-height:normal"><o:p>&nbsp;</o:p></p>
-      <p class="MsoNormal" style="text-indent:18.0pt;line-height:normal">Put it
-        on the ground and right click. Enter the item name that you want it to
-        collect (you can write in <span class="SpellE">modname<span class="GramE">:nodename</span></span>
-        or alias).</p>
-      <p class="MsoNormal" style="text-indent:18.0pt;line-height:normal">Left
-        click to activate, left click it again to stop it and take it and
-        everything it has collected into your inventory.</p>
-      <p class="MsoNormal" style="text-indent:18.0pt;line-height:normal"><span style="mso-no-proof:yes"><img
-            src="images/image006.png" alt="Description: Description: Description: C:\Users\Acer\Pictures\workers 2.0\harvey_00.bmp"
-            v:shapes="Picture_x0020_20" width="800" height="450"></span></p>
-      <p class="MsoNormal" style="text-indent:18.0pt;line-height:normal"><o:p>&nbsp;</o:p></p>
-      <p class="MsoListParagraph" style="text-indent:-18.0pt;line-height:normal;
-mso-list:l2 level1 lfo6"><b><span style="mso-fareast-font-family:
-Calibri;mso-fareast-theme-font:minor-latin;mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin"><span
-              style="mso-list:Ignore">B.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                </span></span></span></b><span dir="LTR"></span><span class="SpellE"><b>Mordec</b></span><b>
-          The Miner<o:p></o:p></b></p>
-      <p class="MsoNormal" style="text-indent:18.0pt;line-height:normal"><span style="mso-no-proof:yes"><img
-            src="images/image007.png" alt="Description: Description: Description: Description: C:\Users\Acer\Pictures\workers 2.0\face_mordec.png"
-            v:shapes="Picture_x0020_8" width="160" height="160"></span></p>
-      <p class="MsoNormal" style="text-indent:18.0pt;line-height:normal"><o:p>&nbsp;</o:p></p>
-      <p class="MsoNormal" style="text-indent:18.0pt;line-height:normal">Put it
-        on the ground and right click. Place some <span class="SpellE">default<span
-            class="GramE">:wood</span></span> into the wood slot at top left
-        corner.</p>
-      <p class="MsoNormal" style="text-indent:18.0pt;line-height:normal">Left
-        click to activate, left click it again to stop it. For each level of
-        ground it digs, it will consume one wood. Right click to open its
-        inventory.</p>
-      <p class="MsoNormal" style="text-indent:18.0pt;line-height:normal"><span style="mso-no-proof:yes"><img
-            src="images/image009.jpg" alt="Description: Description: Description: C:\Users\Acer\Pictures\workers 2.0\mordec_00.bmp"
-            v:shapes="Picture_x0020_21" width="600" height="337"></span><span style="mso-spacerun:yes">&nbsp;</span><span
-          style="mso-no-proof:yes"><img src="images/image011.jpg"
-            alt="Description: Description: Description: C:\Users\Acer\Pictures\workers 2.0\mordec_01.bmp"
-            v:shapes="Picture_x0020_22" width="600" height="337"></span></p>
-      <p class="MsoNormal" style="text-indent:18.0pt;line-height:normal"><span style="mso-no-proof:yes"><img
-            src="images/image013.jpg" alt="Description: Description: Description: C:\Users\Acer\Pictures\workers 2.0\mordec_02.bmp"
-            v:shapes="Picture_x0020_23" width="600" height="337"></span><span style="mso-spacerun:yes">&nbsp;</span><span
-          style="mso-no-proof:yes"><img src="images/image015.jpg"
-            alt="Description: Description: Description: C:\Users\Acer\Pictures\workers 2.0\mordec_03.bmp"
-            v:shapes="Picture_x0020_24" width="600" height="337"></span></p>
-      <p class="MsoNormal" style="text-indent:18.0pt;line-height:normal"><span class="SpellE">Mordec</span>
-        glows in the dark.</p>
-      <p class="MsoNormal" style="text-indent:18.0pt;line-height:normal"><span style="mso-no-proof:yes"><img
-            src="images/image017.jpg" alt="Description: Description: Description: C:\Users\Acer\Pictures\workers 2.0\mordec_04.bmp"
-            v:shapes="Picture_x0020_25" width="600" height="337"></span></p>
-      <p class="MsoNormal" style="text-indent:18.0pt;line-height:normal"><o:p>&nbsp;</o:p></p>
-      <p class="MsoListParagraph" style="text-indent:-18.0pt;line-height:normal;
-mso-list:l2 level1 lfo6"><b><span style="mso-fareast-font-family:
-Calibri;mso-fareast-theme-font:minor-latin;mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin"><span
-              style="mso-list:Ignore">C.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                </span></span></span></b><span dir="LTR"></span><span class="SpellE"><b>Garren</b></span><b>
-          The Gardener<o:p></o:p></b></p>
-      <p class="MsoNormal" style="text-indent:18.0pt;line-height:normal"><span style="mso-no-proof:yes"><img
-            src="images/image018.png" alt="Description: Description: Description: Description: C:\Users\Acer\Pictures\workers 2.0\face_garren.png"
-            v:shapes="Picture_x0020_5" width="160" height="160"></span></p>
-      <p class="MsoNormal" style="text-indent:18.0pt;line-height:normal"><o:p>&nbsp;</o:p></p>
-      <p class="MsoNormal" style="text-indent:18.0pt;line-height:normal">Put it
-        on the ground and right click. Place one plant sample into the top left
-        slot and put some <span class="SpellE">default<span class="GramE">:sapling</span></span>
-        into the top right slot. Left click to activate, left click it again to
-        stop it.</p>
-      <p class="MsoNormal" style="text-indent:18.0pt;line-height:normal"><span style="mso-no-proof:yes"><img
-            src="images/image020.jpg" alt="Description: Description: Description: C:\Users\Acer\Pictures\workers 2.0\garren_00.bmp"
-            v:shapes="Picture_x0020_26" width="600" height="337"></span><span style="mso-spacerun:yes">&nbsp;</span><span
-          style="mso-no-proof:yes"><img src="images/image022.jpg"
-            alt="Description: Description: Description: C:\Users\Acer\Pictures\workers 2.0\garren_01.bmp"
-            v:shapes="Picture_x0020_27" width="600" height="337"></span></p>
-      <p class="MsoNormal" style="text-indent:18.0pt;line-height:normal"><span style="mso-no-proof:yes"><img
-            src="images/image024.jpg" alt="Description: Description: Description: C:\Users\Acer\Pictures\workers 2.0\garren_02.bmp"
-            v:shapes="_x0000_i1055" width="600" height="337"></span><span style="mso-spacerun:yes">&nbsp;</span><span
-          style="mso-no-proof:yes"><img src="images/image026.jpg"
-            alt="Description: Description: Description: C:\Users\Acer\Pictures\workers 2.0\garren_03.bmp"
-            v:shapes="Picture_x0020_29" width="600" height="337"></span></p>
-      <p class="MsoNormal" style="text-indent:18.0pt;line-height:normal">For
-        each jungle tree it grows, it will consume 9 saplings.</p>
-      <p class="MsoNormal" style="text-indent:18.0pt;line-height:normal">For
-        each apple tree, papyrus or cactus it grows, it will consume 3 saplings.</p>
-      <p class="MsoNormal" style="text-indent:18.0pt;line-height:normal">For
-        each jungle grass or dry shrub it grows, it will consume one sapling.</p>
-      <p class="MsoNormal" style="text-indent:18.0pt;line-height:normal">If
-        there is no plant sample or the sample is not one of the plants
-        mentioned above, it will plant a sapling, and that of course will use
-        one sapling each.</p>
-      <p class="MsoNormal" style="text-indent:18.0pt;line-height:normal"><o:p>&nbsp;</o:p></p>
-      <p class="MsoListParagraph" style="text-indent:-18.0pt;line-height:normal;
-mso-list:l2 level1 lfo6"><b><span style="mso-fareast-font-family:
-Calibri;mso-fareast-theme-font:minor-latin;mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin"><span
-              style="mso-list:Ignore">D.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                </span></span></span></b><span dir="LTR"></span><span class="SpellE"><b>Benjo</b></span><b>
-          The Builder<o:p></o:p></b></p>
-      <p class="MsoNormal" style="text-indent:18.0pt;line-height:normal"><span style="mso-no-proof:yes"><img
-            src="images/image027.png" alt="Description: Description: Description: Description: C:\Users\Acer\Pictures\workers 2.0\face_benjo.png"
-            v:shapes="Picture_x0020_3" width="160" height="160"></span></p>
-      <p class="MsoNormal" style="text-indent:18.0pt;line-height:normal"><o:p>&nbsp;</o:p></p>
-      <p class="MsoNormal" style="text-indent:18.0pt;line-height:normal">Put it
-        on the ground and right click. Place a building plan into the top left
-        slot and put any type* of material into the top right slot. Left click
-        to start building.</p>
-      <p class="MsoNormal" style="text-indent:18.0pt;line-height:normal">After
-        that, your plan will turn into blank paper.</p>
-      <p class="MsoNormal" style="text-indent:18.0pt;line-height:normal"><span style="mso-no-proof:yes"><img
-            src="images/image029.jpg" alt="Description: Description: Description: C:\Users\Acer\Pictures\workers 2.0\benjo_00.bmp"
-            v:shapes="Picture_x0020_30" width="600" height="337"></span><span style="mso-spacerun:yes">&nbsp;</span><span
-          style="mso-no-proof:yes"><img src="images/image031.jpg"
-            alt="Description: Description: Description: C:\Users\Acer\Pictures\workers 2.0\benjo_01.bmp"
-            v:shapes="Picture_x0020_31" width="600" height="337"></span></p>
-      <p class="MsoNormal" style="text-indent:18.0pt;line-height:normal">The
-        building plans (refer further above for craft recipes):</p>
-      <p class="MsoListParagraph" style="text-indent:-18.0pt;line-height:normal;
-mso-list:l0 level1 lfo8"><span style="mso-fareast-font-family:
-Calibri;mso-fareast-theme-font:minor-latin;mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin"><span
-            style="mso-list:Ignore">1.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              </span></span></span><span dir="LTR"></span>House</p>
-      <p class="MsoNormal" style="line-height:normal"><img src="images/image033.png"
-          alt="Description: Description: Description: Description: C:\Users\Acer\Pictures\workers 2.0\plan_house.png"
-          v:shapes="Picture_x0020_12" width="80" hspace="12" height="80" align="left"><span
-          style="mso-spacerun:yes">&nbsp;</span><span style="mso-no-proof:yes"><img
-            src="images/image035.jpg" alt="Description: Description: Description: C:\Users\Acer\Pictures\workers 2.0\benjo_02.bmp"
-            v:shapes="Picture_x0020_32" width="600" height="337"></span><span style="mso-spacerun:yes">&nbsp;</span><span
-          style="mso-no-proof:yes"><img src="images/image037.jpg"
-            alt="Description: Description: Description: C:\Users\Acer\Pictures\workers 2.0\benjo_03.bmp"
-            v:shapes="Picture_x0020_33" width="600" height="337"></span></p>
-      <p class="MsoListParagraph" style="text-indent:-18.0pt;line-height:normal;
-mso-list:l0 level1 lfo8"><span style="mso-fareast-font-family:
-Calibri;mso-fareast-theme-font:minor-latin;mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin"><span
-            style="mso-list:Ignore">2.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              </span></span></span><span dir="LTR"></span>Hut</p>
-      <p class="MsoNormal" style="line-height:normal"><img src="images/image039.png"
-          alt="Description: Description: Description: Description: C:\Users\Acer\Pictures\workers 2.0\plan_hut.png"
-          v:shapes="Picture_x0020_13" width="80" hspace="12" height="80" align="left"><span
-          style="mso-no-proof:yes"><img src="images/image041.jpg"
-            alt="Description: Description: Description: C:\Users\Acer\Pictures\workers 2.0\benjo_04.bmp"
-            v:shapes="Picture_x0020_34" width="600" height="337"></span></p>
-      <p class="MsoListParagraph" style="text-indent:-18.0pt;line-height:normal;
-mso-list:l0 level1 lfo8"><span style="mso-fareast-font-family:
-Calibri;mso-fareast-theme-font:minor-latin;mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin"><span
-            style="mso-list:Ignore">3.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              </span></span></span><span dir="LTR"></span>Tower</p>
-      <p class="MsoNormal" style="line-height:normal"><img src="images/image043.png"
-          alt="Description: Description: Description: Description: C:\Users\Acer\Pictures\workers 2.0\plan_tower.png"
-          v:shapes="Picture_x0020_18" width="80" hspace="12" height="80" align="left"><span
-          style="mso-no-proof:yes"><img src="images/image045.jpg"
-            alt="Description: Description: Description: C:\Users\Acer\Pictures\workers 2.0\benjo_05.bmp"
-            v:shapes="Picture_x0020_35" width="600" height="337"></span></p>
-      <p class="MsoListParagraph" style="text-indent:-18.0pt;line-height:normal;
-mso-list:l0 level1 lfo8"><span style="mso-fareast-font-family:
-Calibri;mso-fareast-theme-font:minor-latin;mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin"><span
-            style="mso-list:Ignore">4.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              </span></span></span><span dir="LTR"></span>9x9 wall</p>
-      <p class="MsoNormal" style="line-height:normal"><img src="images/image047.png"
-          alt="Description: Description: Description: Description: C:\Users\Acer\Pictures\workers 2.0\plan_wall.png"
-          v:shapes="Picture_x0020_11" width="80" hspace="12" height="80" align="left"><span
-          style="mso-no-proof:yes"><img src="images/image049.jpg"
-            alt="Description: Description: Description: C:\Users\Acer\Pictures\workers 2.0\benjo_06.bmp"
-            v:shapes="Picture_x0020_37" width="600" height="337"></span><span style="mso-spacerun:yes">&nbsp;</span><span
-          style="mso-no-proof:yes"><img src="images/image051.jpg"
-            alt="Description: Description: Description: C:\Users\Acer\Pictures\workers 2.0\benjo_07.bmp"
-            v:shapes="Picture_x0020_38" width="600" height="337"></span></p>
-      <p class="MsoNormal" style="line-height:normal"><img src="images/image053.png"
-          v:shapes="Picture_x0020_40" width="80" hspace="12" height="80" align="left"><span
-          style="mso-no-proof:yes"><img src="images/image055.jpg"
-            alt="Description: Description: Description: C:\Users\Acer\Pictures\workers 2.0\benjo_08.bmp"
-            v:shapes="Picture_x0020_36" width="600" height="337"></span></p>
-      <p class="MsoListParagraph" style="text-indent:-18.0pt;line-height:normal;
-mso-list:l0 level1 lfo8"><span style="mso-fareast-font-family:
-Calibri;mso-fareast-theme-font:minor-latin;mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin"><span
-            style="mso-list:Ignore">5.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              </span></span></span><span dir="LTR"></span>Underground bunker</p>
-      <p class="MsoNormal" style="line-height:normal"><img src="images/image057.png"
-          alt="Description: Description: Description: Description: C:\Users\Acer\Pictures\workers 2.0\plan_ubunker.png"
-          v:shapes="Picture_x0020_19" width="80" hspace="12" height="80" align="left"><span
-          style="mso-no-proof:yes"><img src="images/image059.jpg"
-            alt="Description: Description: Description: C:\Users\Acer\Pictures\workers 2.0\benjo_12.bmp"
-            v:shapes="Picture_x0020_41" width="600" height="337"></span><span style="mso-spacerun:yes">&nbsp;</span><span
-          style="mso-no-proof:yes"><img src="images/image061.jpg"
-            alt="Description: Description: Description: C:\Users\Acer\Pictures\workers 2.0\benjo_13.bmp"
-            v:shapes="Picture_x0020_42" width="600" height="337"></span></p>
-      <p class="MsoListParagraph" style="text-indent:-18.0pt;line-height:normal;
-mso-list:l0 level1 lfo8"><span style="mso-fareast-font-family:
-Calibri;mso-fareast-theme-font:minor-latin;mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin"><span
-            style="mso-list:Ignore">6.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              </span></span></span><span dir="LTR"></span>Pool</p>
-      <p class="MsoNormal" style="line-height:normal"><img src="images/image063.png"
-          alt="Description: Description: Description: Description: C:\Users\Acer\Pictures\workers 2.0\plan_pool.png"
-          v:shapes="Picture_x0020_17" width="80" hspace="12" height="80" align="left"><span
-          style="mso-no-proof:yes"><img src="images/image065.jpg"
-            alt="Description: Description: Description: C:\Users\Acer\Pictures\workers 2.0\benjo_09.bmp"
-            v:shapes="Picture_x0020_28" width="600" height="337"></span><span style="mso-spacerun:yes">&nbsp;</span><span
-          style="mso-no-proof:yes"><img src="images/image067.jpg"
-            alt="Description: Description: Description: C:\Users\Acer\Pictures\workers 2.0\benjo_10.bmp"
-            v:shapes="Picture_x0020_45" width="600" height="337"></span></p>
-      <p class="MsoListParagraph" style="text-indent:-18.0pt;line-height:normal;
-mso-list:l0 level1 lfo8"><span style="mso-fareast-font-family:
-Calibri;mso-fareast-theme-font:minor-latin;mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin"><span
-            style="mso-list:Ignore">7.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              </span></span></span><span dir="LTR"></span>Moat</p>
-      <p class="MsoNormal" style="line-height:normal"><img src="images/image069.png"
-          alt="Description: Description: Description: Description: C:\Users\Acer\Pictures\workers 2.0\plan_moat.png"
-          v:shapes="Picture_x0020_16" width="80" hspace="12" height="80" align="left"><span
-          style="mso-no-proof:yes"><img src="images/image071.jpg"
-            alt="Description: Description: Description: C:\Users\Acer\Pictures\workers 2.0\benjo_11.bmp"
-            v:shapes="Picture_x0020_46" width="600" height="337"></span></p>
-      <p class="MsoNormal" style="line-height:normal"><o:p>&nbsp;</o:p></p>
-      <p class="MsoNormal" style="text-indent:18.0pt;line-height:normal">*All
-        allowed materials are in default mod: stone, cobble, <span class="SpellE">mossycobble</span>,
-        tree, <span class="SpellE">jungletree</span>, wood, brick, clay, desert
-        stone, glass, <span class="SpellE">steelblock</span>, cactus and dirt.</p>
-      <p class="MsoNormal" style="text-indent:18.0pt;line-height:normal">**There
-        are 2 more building plans which are not shown in this doc. Figure it out
-        by <span class="GramE">yourself</span>, it’s easy ;)</p>
-      <p class="MsoNormal" style="text-indent:18.0pt;line-height:normal"><o:p>&nbsp;</o:p></p>
-      <p class="MsoListParagraph" style="text-indent:-18.0pt;line-height:normal;
-mso-list:l2 level1 lfo6"><b><span style="mso-fareast-font-family:
-Calibri;mso-fareast-theme-font:minor-latin;mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin"><span
-              style="mso-list:Ignore">E.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                </span></span></span></b><span dir="LTR"></span><span class="SpellE"><b>Gredo</b></span><b>
-          The Guard<o:p></o:p></b></p>
-      <p class="MsoNormal" style="text-indent:18.0pt;line-height:normal"><span style="mso-no-proof:yes"><img
-            src="images/image072.png" alt="Description: Description: Description: Description: C:\Users\Acer\Pictures\workers 2.0\face_gredo.png"
-            v:shapes="Picture_x0020_6" width="160" height="160"></span></p>
-      <p class="MsoNormal" style="text-indent:18.0pt;line-height:normal"><o:p>&nbsp;</o:p></p>
-      <p class="MsoNormal" style="text-indent:18.0pt;line-height:normal">You
-        only need to put it on the ground and let it catch any worker which
-        enters its radius. The owner of the caught worker will be notified about
-        the catch.</p>
-      <p class="MsoNormal" style="text-indent:18.0pt;line-height:normal">Only
-        you (the owner of the guard) can take caught workers from its inventory.</p>
-      <p class="MsoNormal" style="text-indent:18.0pt;line-height:normal"><span style="mso-no-proof:yes"><img
-            src="images/image074.jpg" alt="Description: Description: C:\Users\Acer\Pictures\workers 2.0\gredo_00.bmp"
-            v:shapes="Picture_x0020_43" width="600" height="337"></span><span style="mso-spacerun:yes">&nbsp;</span><span
-          style="mso-no-proof:yes"><img src="images/image076.jpg"
-            alt="Description: Description: C:\Users\Acer\Pictures\workers 2.0\gredo_01.bmp"
-            v:shapes="Picture_x0020_44" width="600" height="337"></span></p>
-      <p class="MsoNormal" style="text-indent:18.0pt;line-height:normal"><o:p>&nbsp;</o:p></p>
-      <p class="MsoListParagraph" style="text-indent:-18.0pt;line-height:normal;
-mso-list:l2 level1 lfo6"><b><span style="mso-fareast-font-family:
-Calibri;mso-fareast-theme-font:minor-latin;mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin"><span
-              style="mso-list:Ignore">F.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                </span></span></span></b><span dir="LTR"></span><span class="SpellE"><b>Asvard</b></span><b>
-          The Assassin<o:p></o:p></b></p>
-      <p class="MsoNormal" style="text-indent:18.0pt;line-height:normal"><span style="mso-no-proof:yes"><img
-            src="images/image077.png" alt="Description: Description: Description: Description: C:\Users\Acer\Pictures\workers 2.0\face_asvard.png"
-            v:shapes="Picture_x0020_2" width="160" height="160"></span></p>
-      <p class="MsoNormal" style="text-indent:18.0pt;line-height:normal"><o:p>&nbsp;</o:p></p>
-      <p class="MsoNormal" style="text-indent:18.0pt;line-height:normal">Put it
-        on the ground and right click. Enter player’s name which you want it to
-        kill.</p>
-      <p class="MsoNormal" style="text-indent:18.0pt;line-height:normal">Left
-        click to activate, left click it again to stop it.</p>
-      <p class="MsoNormal" style="text-indent:18.0pt;line-height:normal">It can
-        wait for the targeted player to be online. Any guard within its radius
-        will be annihilated.</p>
-      <p class="MsoNormal" style="text-indent:18.0pt;line-height:normal">Once it
-        is stopped or completed its job, it will turn to steel sword.</p>
-      <p class="MsoNormal" style="text-indent:18.0pt;line-height:normal"><span style="mso-no-proof:yes"><img
-            src="images/image079.jpg" alt="Description: Description: C:\Users\Acer\Pictures\workers 2.0\asvard_00.bmp"
-            v:shapes="Picture_x0020_47" width="600" height="337"></span><span style="mso-spacerun:yes">&nbsp;</span><span
-          style="mso-no-proof:yes"><img src="images/image081.jpg"
-            alt="Description: Description: C:\Users\Acer\Pictures\workers 2.0\asvard_01.bmp"
-            v:shapes="Picture_x0020_48" width="600" height="337"></span></p>
-      <p class="MsoNormal" style="text-indent:18.0pt;line-height:normal">*It
-        would not move if the targeted player is too far away (like <i>you-can’t-see-the-player</i>
-        far away).</p>
-      <p class="MsoNormal" style="text-indent:18.0pt;line-height:normal"><o:p>&nbsp;</o:p></p>
-      <p class="MsoListParagraph" style="text-indent:-18.0pt;line-height:normal;
-mso-list:l2 level1 lfo6"><b><span style="mso-fareast-font-family:
-Calibri;mso-fareast-theme-font:minor-latin;mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin"><span
-              style="mso-list:Ignore">G.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;
-                </span></span></span></b><span dir="LTR"></span><span class="SpellE"><b>Toco</b></span><b>
-          The Thief<o:p></o:p></b></p>
-      <p class="MsoNormal" style="text-indent:18.0pt;line-height:normal"><span style="mso-no-proof:yes"><img
-            src="images/image082.png" alt="Description: Description: Description: Description: C:\Users\Acer\Pictures\workers 2.0\face_toco.png"
-            v:shapes="Picture_x0020_9" width="160" height="160"></span></p>
-      <p class="MsoNormal" style="text-indent:18.0pt;line-height:normal"><o:p>&nbsp;</o:p></p>
-      <p class="MsoNormal" style="text-indent:18.0pt;line-height:normal">It is
-        almost invisible and cannot be detected by guard or any workers above.</p>
-      <p class="MsoNormal" style="text-indent:18.0pt;line-height:normal">You
-        only need to put it anywhere and let it steal everything inside locked
-        chests and players’ inventory nearby.</p>
-      <p class="MsoNormal" style="text-indent:18.0pt;line-height:normal"><span style="mso-no-proof:yes"><img
-            src="images/image084.jpg" alt="Description: Description: C:\Users\Acer\Pictures\workers 2.0\toco_01.bmp"
-            v:shapes="Picture_x0020_49" width="600" height="337"></span><span style="mso-spacerun:yes">&nbsp;</span><span
-          style="mso-no-proof:yes"><img src="images/image086.jpg"
-            alt="Description: Description: C:\Users\Acer\Pictures\workers 2.0\toco_02.bmp"
-            v:shapes="Picture_x0020_50" width="600" height="337"></span></p>
-      <p class="MsoNormal" style="text-indent:18.0pt;line-height:normal"><span style="mso-no-proof:yes"><img
-            src="images/image088.jpg" alt="Description: Description: C:\Users\Acer\Pictures\workers 2.0\toco_03.bmp"
-            v:shapes="Picture_x0020_51" width="600" height="337"></span><span style="mso-spacerun:yes">&nbsp;</span><span
-          style="mso-no-proof:yes"><img src="images/image090.jpg"
-            alt="Description: Description: C:\Users\Acer\Pictures\workers 2.0\toco_04.bmp"
-            v:shapes="Picture_x0020_52" width="600" height="337"></span></p>
-      <p class="MsoNormal" style="text-indent:18.0pt;line-height:normal">*Tips
-        for its victim: Take your stuff back from him.</p>
-      <p class="MsoNormal" style="text-indent:18.0pt;line-height:normal"><o:p>&nbsp;</o:p></p>
-      <p class="MsoListParagraph" style="text-indent:-18.0pt;line-height:normal;
-mso-list:l2 level1 lfo6"><b><span style="mso-fareast-font-family:
-Calibri;mso-fareast-theme-font:minor-latin;mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin"><span
-              style="mso-list:Ignore">H.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;
-                </span></span></span></b><span dir="LTR"></span><span class="SpellE"><b>Cardon</b></span><b>
-          The Cop<o:p></o:p></b></p>
-      <p class="MsoNormal" style="text-indent:18.0pt;line-height:normal"><span style="mso-no-proof:yes"><img
-            src="images/image091.png" alt="Description: Description: Description: Description: C:\Users\Acer\Pictures\workers 2.0\face_cardon.png"
-            v:shapes="Picture_x0020_4" width="160" height="160"></span></p>
-      <p class="MsoNormal" style="text-indent:18.0pt;line-height:normal"><o:p>&nbsp;</o:p></p>
-      <p class="MsoNormal" style="text-indent:18.0pt;line-height:normal">It’s
-        the only worker so far that can beat assassin and thief. It can detect
-        nearby thief and tell you its location and owner.</p>
-      <p class="MsoNormal" style="text-indent:18.0pt;line-height:normal">When it
-        detects an assassin, it will destroy the assassin.</p>
-      <p class="MsoNormal" style="text-indent:18.0pt;line-height:normal">If the
-        assassin has no target yet, then <span class="SpellE">Cardon</span>
-        will give the owner a warning.</p>
-      <p class="MsoNormal" style="text-indent:18.0pt;line-height:normal">If it
-        has a target, then <span class="SpellE">Cardon</span> will beat the
-        owner and sends the owner to a prison high above him.</p>
-      <p class="MsoNormal" style="text-indent:18.0pt;line-height:normal"><span style="mso-no-proof:yes"><img
-            src="images/image093.jpg" alt="Description: Description: C:\Users\Acer\Pictures\workers 2.0\cardon_00.bmp"
-            v:shapes="Picture_x0020_53" width="600" height="337"></span><span style="mso-spacerun:yes">&nbsp;</span><span
-          style="mso-no-proof:yes"><img src="images/image095.jpg"
-            alt="Description: Description: C:\Users\Acer\Pictures\workers 2.0\cardon_01.bmp"
-            v:shapes="Picture_x0020_54" width="600" height="337"></span></p>
-      <p class="MsoNormal" style="text-indent:18.0pt;line-height:normal"><o:p>&nbsp;</o:p></p>
-      <p class="MsoNormal" style="text-align:center;line-height:normal" align="center"><b><span
-            style="font-size:14.0pt">END<o:p></o:p></span></b></p>
+    <div>
+        <p><h1 style="text-align:center; width:100%">Minetest Workers Mod Documenation</h1></p>
+        <div style="width:100%; text-align:center">This documentation is written by LocaL_ALchemisT (see README.md for mod authors).</div>
+        <p><br>
+        </p>
+        <p>Dependencies: Default, Bucket</p>
+        <p><br/></p>
+        <p><b><h2>CONTENTS</h2></b></p>
+        <p>1. Introduction</p>
+        <p>2. Crafting Recipe</p>
+        <p>3. Guide on Workers</p>
+        <p>
+            <p>&nbsp;</p>
+        </p>
+        <p><b><h2>INTRODUCTION</h2></b></p>
+        <p>Before we go further, I apologize for bad English.</p>
+        <p>This mod adds a set of nodes that can move and can be interact to do specified work.</p>
+        <p>The nodes, or workers, are created for the lulz and used for fun only. If you are a serious builder, then this mod <u>might</u> not be useful to you.</p>
+        <p>A brief history about this mod:</p>
+        <p>Ver. 0.0: Harvester was the first (and only) worker available</p>
+        <p>Ver. 1.0: Added Miner &amp; Gardener</p>
+        <p>Ver. 1.1: Revised &amp; improved Miner inventory management</p>
+        <p>Ver. 2.0 (Current): Added 5 more workers</p>
+        <p>
+            <p>&nbsp;</p>
+        </p>
+        <p>Sometimes the workers would be addressed either as ‘him’ or ‘it’. It does not really matter to me.
+        </p>
+        <p>Known bugs and problems:</p>
+        <p class="MsoListParagraphCxSpFirst">1. Workers move too fast when they face north or east.</p>
+        <p>2. Lag or crash occurs at some point (happens rarely, depend on how many workers are working in one place).</p>
+        <p>This mod has been tested using Minetest 0.4dev.</p>
+        <p>If there are any problems, raise it up in the official Minetest forum (in this mod’s topic, maybe?).</p>
+        <p>Have fun.</p>
+        <p>
+            <p>&nbsp;</p>
+        </p>
+        <p><b><h2>CRAFTING RECIPE</h2></b></p>
+        <p><span><img src="images/image002.jpg" alt="recipe_all.bmp" width="601" height="739"></span></p>
+        <p>Some building plans for builder (will be explained further below):</p>
+        <p><span><img src="images/image004.jpg" alt="plan_recipe_almost_all.bmp" width="601" height="739"></span></p>
+        <p>
+            <p>&nbsp;</p>
+        </p>
+        <p><b><h2>GUIDE ON WORKERS</h2></b></p>
+        <p><h3>A. Harvey The Harvester</h3></p>
+        <p><span><img src="images/image005.png" alt="face_harvey.png" width="160" height="160"></span></p>
+        <p>
+            <p>&nbsp;</p>
+        </p>
+        <p>Put it on the ground and right click. Enter the item name that you want it to collect (you can write in modname:nodename or alias).</p>
+        <p>Left click to activate, left click it again to stop it and take it and everything it has collected into your inventory.</p>
+        <p><span><img src="images/image006.png" alt="harvey_00.bmp" width="800" height="450"></span></p>
+        <p>
+            <p>&nbsp;</p>
+        </p>
+        <p><h3>B. Mordec The Miner</h3></p>
+        <p><span><img src="images/image007.png" alt="face_mordec.png" width="160" height="160"></span></p>
+        <p>
+            <p>&nbsp;</p>
+        </p>
+        <p>Put it on the ground and right click. Place some default:wood into the wood slot at top left corner.
+        </p>
+        <p>Left click to activate, left click it again to stop it. For each level of ground it digs, it will consume one wood. Right click to open its inventory.
+        </p>
+        <p><img src="images/image009.jpg" alt="mordec_00.bmp" width="600" height="337"><span><img src="images/image011.jpg" alt="mordec_01.bmp" width="600" height="337"></span></p>
+        <p><img src="images/image013.jpg" alt="mordec_02.bmp" width="600" height="337"><span><img src="images/image015.jpg" alt="mordec_03.bmp" width="600" height="337"></span></p>
+        <p>Mordec glows in the dark.</p>
+        <p><img src="images/image017.jpg" alt="mordec_04.bmp" width="600" height="337"></p>
+        <p>
+            <p>&nbsp;</p>
+        </p>
+        <p><h3>C. Garren The Gardener</h3></p>
+        <p><img src="images/image018.png" alt="face_garren.png" width="160" height="160"></p>
+        <p>
+            <p>&nbsp;</p>
+        </p>
+        <p>Put it on the ground and right click. Place one plant sample into the top left slot and put some default:sapling into the top right slot. Left click to activate, left click it again to stop it.</p>
+        <p><img src="images/image020.jpg" alt="garren_00.bmp" width="600" height="337"><img src="images/image022.jpg" alt="garren_01.bmp" width="600" height="337"></p>
+        <p><img src="images/image024.jpg" alt="garren_02.bmp" width="600" height="337"><img src="images/image026.jpg" alt="garren_03.bmp" width="600" height="337"></p>
+        <p>For each jungle tree it grows, it will consume 9 saplings.</p>
+        <p>For each apple tree, papyrus or cactus it grows, it will consume 3 saplings.</p>
+        <p>For each jungle grass or dry shrub it grows, it will consume one sapling.</p>
+        <p>If there is no plant sample or the sample is not one of the plants mentioned above, it will plant a sapling, and that of course will use one sapling each.</p>
+        <p>
+            <p>&nbsp;</p>
+        </p>
+        <p><h4>D. Benjo The Builder</h4></p>
+        <p><img src="images/image027.png" alt="face_benjo.png" width="160" height="160"></p>
+        <p>
+            <p>&nbsp;</p>
+        </p>
+        <p>Put it on the ground and right click. Place a building plan into the top left slot and put any type* of material into the top right slot. Left click to start building.</p>
+        <p>After that, your plan will turn into blank paper.</p>
+        <p><img src="images/image029.jpg" alt="benjo_00.bmp" width="600" height="337"><span><img src="images/image031.jpg" alt="benjo_01.bmp" width="600" height="337"></span></p>
+        <p>The building plans (refer further above for craft recipes):</p>
+        <h4>1. House</h4>
+        <p><img src="images/image033.png" alt="plan_house.png" width="80" hspace="12" height="80" align="left"><img src="images/image035.jpg" alt="benjo_02.bmp" width="600" height="337"><img src="images/image037.jpg" alt="benjo_03.bmp" width="600" height="337"></p>
+        <h4>2. Hut</h4>
+        <p><img src="images/image039.png" alt="plan_hut.png" width="80" hspace="12" height="80" align="left"><img src="images/image041.jpg" alt="benjo_04.bmp" width="600" height="337"></p>
+        <h4>3. Tower</h4>
+        <p><img src="images/image043.png" alt="plan_tower.png" width="80" hspace="12" height="80" align="left"><img src="images/image045.jpg" alt="benjo_05.bmp" width="600" height="337"></p>
+        <h4>4. 9x9 wall</h4>
+        <p><img src="images/image047.png" alt="plan_wall.png" width="80" hspace="12" height="80" align="left"><img src="images/image049.jpg" alt="benjo_06.bmp" width="600" height="337"><img src="images/image051.jpg" alt="benjo_07.bmp" width="600" height="337"></p>
+        <p><img src="images/image053.png" width="80" hspace="12" height="80" align="left"><img src="images/image055.jpg" alt="benjo_08.bmp" width="600" height="337"></p>
+        <h4>5. Underground bunker</h4>
+        <p><img src="images/image057.png" alt="plan_ubunker.png" width="80" hspace="12" height="80" align="left"><img src="images/image059.jpg" alt="benjo_12.bmp" width="600" height="337"><img src="images/image061.jpg" alt="benjo_13.bmp" width="600" height="337"></p>
+        <h4>6. Pool</h4>
+        <p><img src="images/image063.png" alt="plan_pool.png" width="80" hspace="12" height="80" align="left"><img src="images/image065.jpg" alt="benjo_09.bmp" width="600" height="337"><img src="images/image067.jpg" alt="benjo_10.bmp" width="600" height="337"></p>
+        <h4>7. Moat</h4>
+        <p><img src="images/image069.png" alt="plan_moat.png" width="80" hspace="12" height="80" align="left"><img src="images/image071.jpg" alt="benjo_11.bmp" width="600" height="337"></p>
+        <p>
+            <p>&nbsp;</p>
+        </p>
+        <p>*All allowed materials are in default mod: stone, cobble, mossycobble, tree, jungletree, wood, brick, clay, desert stone, glass, steelblock, cactus and dirt.</p>
+        <p>**There are 2 more building plans which are not shown in this doc. Figure it out by yourself, it’s easy ;)</p>
+        <p>
+            <p>&nbsp;</p>
+        </p>
+        <p><h3>E. Gredo The Guard</h3></p>
+        <p><img src="images/image072.png" alt="face_gredo.png" width="160" height="160"></p>
+        <p>
+            <p>&nbsp;</p>
+        </p>
+        <p>You only need to put it on the ground and let it catch any worker which enters its radius. The owner of the caught worker will be notified about the catch.</p>
+        <p>Only you (the owner of the guard) can take caught workers from its inventory.</p>
+        <p><img src="images/image074.jpg" alt="gredo_00.bmp" width="600" height="337"><img src="images/image076.jpg" alt="gredo_01.bmp" width="600" height="337"></p>
+        <p>
+            <p>&nbsp;</p>
+        </p>
+        <p><h3>F. Asvard The Assassin</h3></p>
+        <p><img src="images/image077.png" alt="face_asvard.png" width="160" height="160"></p>
+        <p>
+            <p>&nbsp;</p>
+        </p>
+        <p>Put it on the ground and right click. Enter player’s name which you want it to kill.
+        </p>
+        <p>Left click to activate, left click it again to stop it.</p>
+        <p>It can wait for the targeted player to be online. Any guard within its radius will be annihilated.</p>
+        <p>Once it is stopped or completed its job, it will turn to steel sword.</p>
+        <p><img src="images/image079.jpg" alt="asvard_00.bmp" width="600" height="337"><img src="images/image081.jpg" alt="asvard_01.bmp" width="600" height="337"></p>
+        <p>*It would not move if the targeted player is too far away (like <i>you-can’t-see-the-player</i> far away).</p>
+        <p>
+            <p>&nbsp;</p>
+        </p>
+        <p><h3>G. TocoThe Thief</h3></p>
+        <p><img src="images/image082.png" alt="face_toco.png" width="160" height="160"></p>
+        <p>
+            <p>&nbsp;</p>
+        </p>
+        <p>It is almost invisible and cannot be detected by guard or any workers above.</p>
+        <p>You only need to put it anywhere and let it steal everything inside locked chests and players’ inventory nearby.</p>
+        <p><img src="images/image084.jpg" alt="toco_01.bmp" width="600" height="337"><img src="images/image086.jpg" alt="toco_02.bmp" width="600" height="337"></p>
+        <p><img src="images/image088.jpg" alt="toco_03.bmp" width="600" height="337"><img src="images/image090.jpg" alt="toco_04.bmp" width="600" height="337"></p>
+        <p>*Tips for its victim: Take your stuff back from him.</p>
+        <p>
+            <p>&nbsp;</p>
+        </p>
+        <p><h3>H. Cardon The Cop</h3></p>
+        <p><img src="images/image091.png" alt="face_cardon.png" width="160" height="160"></p>
+        <p>
+            <p>&nbsp;</p>
+        </p>
+        <p>It’s the only worker so far that can beat assassin and thief. It can detect nearby thief and tell you its location and owner.</p>
+        <p>When it detects an assassin, it will destroy the assassin.</p>
+        <p>If the assassin has no target yet, then  Cardon will give the owner a warning.</p>
+        <p>If it has a target, then  Cardon will beat the owner and sends the owner to a prison high above him.</p>
+        <p><img src="images/image093.jpg" alt="cardon_00.bmp" width="600" height="337"><img src="images/image095.jpg" alt="cardon_01.bmp" width="600" height="337"></p>
+        <p>
+        </p>
+        <p style="text-align:center" align="center"><b><span style="font-size:1.5em">END</span></b></p>
     </div>
-  </body>
+</body>
+
 </html>

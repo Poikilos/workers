@@ -1,22 +1,10 @@
- Documentation for Workers (Minetest mod)
+# Minetest Workers Mod Documenation
 
-**Workers Ver. 2.0**
-
-  
-
-Workers Mod
-
-By LocaL_ALchemisT (prof_awang@yahoo.com)
-
-License: WTFPL
-
-Version: 2.0
+This documentation is written by LocaL_ALchemisT (see README.md for mod authors).
 
 Dependencies: Default, Bucket (highly recommended)
 
-  
-
-**CONTENTS**
+## CONTENTS
 
 1. Introduction
 
@@ -24,7 +12,7 @@ Dependencies: Default, Bucket (highly recommended)
 
 3. Guide on Workers
 
-**INTRODUCTION**
+## INTRODUCTION
 
 Before we go further, I apologize for bad English.
 
@@ -56,7 +44,7 @@ If there are any problems, raise it up in the official Minetest forum (in this m
 
 Have fun.
 
-**CRAFTING RECIPE**
+## CRAFTING RECIPES
 
 ![recipe_all.bmp](images/image002.jpg)
 
@@ -64,9 +52,9 @@ Some building plans for builder (will be explained further below):
 
 ![plan_recipe_almost_all.bmp](images/image004.jpg)
 
-**GUIDE ON WORKERS**
+## GUIDE ON WORKERS
 
-**A.** **Harvey The Harvester**
+### A. Harvey The Harvester
 
 ![face_harvey.png](images/image005.png)
 
@@ -76,7 +64,7 @@ Left click to activate, left click it again to stop it and take it and everythin
 
 ![harvey_00.bmp](images/image006.png)
 
-**B.** **Mordec** **The Miner**
+### B. Mordec The Miner
 
 ![face_mordec.png](images/image007.png)
 
@@ -92,7 +80,7 @@ Mordec glows in the dark.
 
 ![mordec_04.bmp](images/image017.jpg)
 
-**C.** **Garren** **The Gardener**
+### C. Garren The Gardener
 
 ![face_garren.png](images/image018.png)
 
@@ -110,7 +98,7 @@ For each jungle grass or dry shrub it grows, it will consume one sapling.
 
 If there is no plant sample or the sample is not one of the plants mentioned above, it will plant a sapling, and that of course will use one sapling each.
 
-**D.** **Benjo** **The Builder**
+### D. Benjo The Builder
 
 ![face_benjo.png](images/image027.png)
 
@@ -156,7 +144,7 @@ The building plans (refer further above for craft recipes):
 
 **There are 2 more building plans which are not shown in this doc. Figure it out by yourself, it’s easy ;)
 
-**E.** **Gredo** **The Guard**
+### E. Gredo The Guard
 
 ![face_gredo.png](images/image072.png)
 
@@ -166,7 +154,7 @@ Only you (the owner of the guard) can take caught workers from its inventory.
 
 ![gredo_00.bmp](images/image074.jpg)![gredo_01.bmp](images/image076.jpg)
 
-**F.** **Asvard** **The Assassin**
+### F. Asvard The Assassin
 
 ![face_asvard.png](images/image077.png)
 
@@ -182,7 +170,7 @@ Once it is stopped or completed its job, it will turn to steel sword.
 
 *It would not move if the targeted player is too far away (like _you-can’t-see-the-player_ far away).
 
-**G.** **Toco** **The Thief**
+### G. Toco The Thief
 
 ![face_toco.png](images/image082.png)
 
@@ -196,7 +184,7 @@ You only need to put it anywhere and let it steal everything inside locked chest
 
 *Tips for its victim: Take your stuff back from him.
 
-**H.** **Cardon** **The Cop**
+### H. Cardon The Cop
 
 ![face_cardon.png](images/image091.png)
 
